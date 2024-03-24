@@ -1,0 +1,10 @@
+# Airflow-Data-Engineering
+# This repository contains the code for the Data Engineering project using Apache Airflow.
+
+numpy       == 1.26.4
+pandas      == 2.2.1
+apache-airflow    == 2.8.2
+requests    == 2.31.0
+#json   ==2.0.9
+datetime    == 5.5
+pathlib3x   == 2.0.3
