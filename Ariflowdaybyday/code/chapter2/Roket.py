@@ -4,9 +4,10 @@ import json
 import requests
 import pathlib
 import requests.exceptions as requests_exceptions
+import airflow as airflow 
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from airflow.operators.bash import bash_operator
+from airflow.operators.bash import BashOperator
 
 dag = DAG(
     dag_id="download_rocket_launches",
@@ -15,7 +16,7 @@ dag = DAG(
     tags=["example"]
 )
 
-dowlnoad_rocket_launches = bash_operator(
+dowlnoad_rocket_launches = BashOperator(
     task_id="download_rocket_launches",
     bash_command="curl -o /tmp/rocket_launches.json -L 'https://ll.thespacedevs.com/2.0.0/launch/upcoming'",
     dag=dag,
